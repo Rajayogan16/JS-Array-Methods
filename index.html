@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+  ::placeholder{
+      text-align: center;
+  }
+  label{
+      color: #ffffff;
+  }
+</style>
+<body>
+<div class="container-fluid ">
+    <div class="row">
+         <div class="col-md-12">
+            <div class="array methods text-center border bg-success">
+              <h1 class="h1 display-1 fw-bold text-light">Array Methods</h1>
+             
+              <div class=" tostring my-2 border mx-2 p-3">
+                <input type="text" id="text" placeholder="Enter the elements of array" class="form-control" >
+                <button class="btn btn-warning d-block mx-auto my-4" onclick="arraytostring()">To String</button>
+                <p id="p1" class="my-2 bg-info"></p>
+              </div>
+              <div class=" join my-2 border mx-2 p-3">
+                <input type="text" id="textjoin" placeholder="Enter the elements of array" class="form-control" >
+                <label for="join">Join with:</label>
+                <input type="text"  id="join" class="mt-4 mx-auto" placeholder="element">
+                <button class="btn btn-warning d-block mx-auto my-4" onclick="joint()">Join Method</button>
+                <p id="p2" class="my-2 bg-info"></p>
+              </div>
+              <div class=" pop my-2 border mx-2 p-3">
+                <input type="text" id="textpop" placeholder="Enter the elements of array" class="form-control" >
+                <button class="btn btn-warning d-block mx-auto my-4" onclick="popmethod()">Pop Method</button>
+                <p id="p3" class="my-2 bg-info"></p>
+              </div>
+              <div class=" push my-2 border mx-2 p-3">
+                <input type="text" id="textpush" placeholder="Enter the elements of array" class="form-control" >
+                <label for="join">Push:</label>
+                <input type="text"  id="push" class="mt-4 mx-auto" placeholder="array element">
+                <button class="btn btn-warning d-block mx-auto my-4" onclick="pushmethod()">Push Method</button>
+                <p id="p4" class="my-2 bg-info"></p>
+              </div>
+              <div class="shift my-2 border mx-2 p-3">
+                <input type="text" id="textshift" placeholder="Enter the elements of array" class="form-control" >
+                <button class="btn btn-warning d-block mx-auto my-4" onclick="shiftmethod()">Shift Method</button>
+                <p id="p5" class="my-2 bg-info"></p>
+              </div>
+              <div class=" unshift my-2 border mx-2 p-3">
+                <input type="text" id="textunshift" placeholder="Enter the elements of array" class="form-control" >
+                <label for="unshift">Unshift:</label>
+                <input type="text"  id="unshift" class="mt-4 mx-auto" placeholder="Unshift element">
+                <button class="btn btn-warning d-block mx-auto my-4" onclick="unshiftmethod()">Unshift Method</button>
+                <p id="p6" class="my-2 bg-info"></p>
+              </div>
+              <div class="delete my-2 border mx-2 p-3">
+                <input type="text" id="textdel" placeholder="Enter the elements of array" class="form-control" >
+                <input type="number"  id="del" class="mt-4 mx-auto" placeholder="Index Number">
+                <button class="btn btn-warning d-block mx-auto my-4" onclick="delmethod()">Delete</button>
+                <p id="p7" class="my-2 bg-info"></p>
+              </div>
+              <div class="concate my-2 border mx-2 p-3">
+                <input type="text" id="textcon1" placeholder="Enter the elements of first array" class="form-control" >
+                <input type="text" id="textcon2" placeholder="Enter the elements of Second array" class="form-control mt-2" >
+                <button class="btn btn-warning d-block mx-auto my-4" onclick="conmethod()">Concate</button>
+                <p id="p8" class="my-2 bg-info"></p>
+              </div>
+              <div class="splice my-2 border mx-2 p-3">
+                <input type="text" id="textspl" placeholder="Enter the elements of array" class="form-control" >
+                <label for="index">Splice:</label>
+                <input type="number"  id="index" class="mt-4 mx-auto" placeholder="Index">
+                <input type="number"  id="Remove" class="mt-4 mx-auto" placeholder="Remove">
+                <input type="text"  id="splice" class="mt-4 mx-auto" placeholder="Elements">
+                <button class="btn btn-warning d-block mx-auto my-4" onclick="splicemethod()">Splice</button>
+                <p id="p9" class="my-2 bg-info"></p>
+              </div>
+              <div class="slice my-2 border mx-2 p-3">
+                <input type="text" id="textsli" placeholder="Enter the elements of array" class="form-control" >
+                <label for="index">Slice:</label>
+                <input type="number"  id="start" class="mt-4 mx-auto" placeholder="start">
+                <input type="number"  id="stop" class="mt-4 mx-auto" placeholder="Stop">
+                <button class="btn btn-warning d-block mx-auto my-4" onclick="slicemethod()">Slice</button>
+                <p id="p10" class="my-2 bg-info"></p>
+              </div>
+              <div class="sort my-2 border mx-2 p-3">
+                <input type="text" id="textsort" placeholder="Enter the elements of array" class="form-control" >
+                <button class="btn btn-warning mx-auto my-4" onclick="sortmethod()">Sort Array</button>
+                <button class="btn btn-warning  mx-auto my-4" onclick="revmethod()">Reverse Array</button>
+                <p id="p11" class="my-2 bg-info"></p>
+                <button class="btn btn-warning mx-auto my-4" onclick="ascendmethod()">Sort Number Ascending </button>
+                <button class="btn btn-warning  mx-auto my-4" onclick="descendmethod()">Sort Number Descending</button>
+                <button class="btn btn-warning  mx-auto my-4" onclick="randmethod()">Sort Number Random</button>
+                <button class="btn btn-warning  mx-auto my-4" onclick="fishmethod()">Fisher Yates Method</button>
+                <p id="p12" class="my-2 bg-info"></p>
+              </div>
+              <div class="find my-2 border mx-2 p-3">
+                <input type="text" id="textfind" placeholder="Enter the elements of array" class="form-control" >
+                <button class="btn btn-warning  mx-auto my-4" onclick="maxmethod()">Math.max Method</button>
+                <button class="btn btn-warning  mx-auto my-4" onclick="minmethod()">Math.min Method</button>
+                <p id="p13" class="my-2 bg-info"></p>
+              </div>
+         </div>
+    </div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="script.js"></script>   
+
+</body>
+</html>
